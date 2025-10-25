@@ -17,7 +17,7 @@ Bu ödevde amacınız:
 ---
 
 ## İzlenecek Adımlar
-1. **Bir düşman prefab** oluşturun (örneğin “Enemy”)  
+1. Bir düşman **prefab** veya **obje** oluşturun (örneğin “Enemy”)  
 2. **Spawner** isminde bir boş GameObject oluşturun ve içine bir script ekleyin  
 3. Script içinde:
    - `currentWave`, `enemiesPerWave`, `spawnInterval`, `difficultyMultiplier` gibi değişkenler tanımlayın  
@@ -29,7 +29,7 @@ Bu ödevde amacınız:
 ---
 
 ## İpucu
-- Yeni dalgaya geçmek için sahnede düşman kalmadığını kontrol edebilirsiniz  
+- Yeni dalgaya geçmek için bir zamanlayıcı kurabilirsiniz
 - Zorluk artışı için farklı yollar:
   - Daha fazla düşman spawn etme  
   - Spawn aralığını azaltma  
@@ -41,7 +41,6 @@ Bu ödevde amacınız:
 ## Ekstra (isteğe bağlı)
 - Dalga sayısını ekranda gösterin (örneğin “Wave 3”)  
 - Her dalgadan sonra kısa bir bekleme süresi (örneğin 3 saniye) ekleyin  
-- Düşmanlar öldükçe dalga tamamlanınca yeni dalgaya geçiş yapın
 
 ---
 
