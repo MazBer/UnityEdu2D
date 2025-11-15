@@ -1,4 +1,4 @@
-# Ders 4 — Fizik, Çarpışmalar ve Geri Bildirim
+# Ders 5 — Fizik, Çarpışmalar ve Geri Bildirim
 
 ## Amaç
 Bu ödevde, 3D fizik sistemini kullanarak bir **engel çarpışma sistemi** oluşturacaksınız. Oyuncu veya obje engellere çarptığında **puan kazanacak veya kaybedecek**, aynı zamanda **görsel geri bildirim** alacak.
