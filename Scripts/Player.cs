@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+    
     // string int float bool
     public bool isActive = true;
     public string name = "Mark";
@@ -12,6 +14,19 @@ public class Player : MonoBehaviour
     
     public string[] namesArray = {"Alice", "Bob", "Charlie"};
     public List<string> namesList = new List<string>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+    }
     
     private void PrintInfo()
     {
