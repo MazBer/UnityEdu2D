@@ -1,4 +1,4 @@
-# Ders 6 - Prefabs, Varyantlar ve Sahne Yönetimi  
+# Ders 6 — Prefabs, Varyantlar ve Sahne Yönetimi  
 
 ## Amaç
 Bu ödevde, farklı sahneler arasında **Prefab tabanlı** bir sistem kullanarak **UI olmadan**, tamamen oyun içi etkileşimle **level seçimi ve sahne geçişi** yapacaksınız.
