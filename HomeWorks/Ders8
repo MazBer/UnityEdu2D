@@ -1,0 +1,127 @@
+# Ders 8 — UI/HUD: Canvas, Anchor’lar, TMP, Pause
+
+## Amaç
+
+Bu ödevde, oyununuz için **responsive (farklı çözünürlüklere uyumlu)** bir **UI/HUD sistemi** oluşturacak; **Canvas modları**, **Anchor ve Layout** kullanımı, **Text** ile metin yönetimi ve **Pause menüsü** kurulumunu öğreneceksiniz.
+Ayrıca bir **Ayarlar Menüsü** oluşturarak **ses ayarı** ve **kontrol ters çevirme (invert controls)** seçeneklerini ekleyeceksiniz.
+
+---
+
+## Açıklama
+
+Oyunlarda kullanıcı arayüzü (UI), oyuncunun oyunla kurduğu en önemli iletişim noktasıdır.
+Can, puan, pause menüsü ve bölüm tamamlandı ekranı gibi öğeler; **net, okunabilir ve her çözünürlükte doğru konumlanmış** olmalıdır.
+
+Bu ödevde hedefiniz:
+
+* Oyun içi HUD tasarlamak
+* Menüleri Canvas ve Anchor sistemiyle responsive hâle getirmek
+* Oyunu duraklatan (Pause) bir sistem kurmak
+* Ayarlar menüsü ile oyuncuya temel kontrol seçenekleri sunmak
+
+---
+
+## Gereksinimler
+
+### 1. **Canvas Yapısını Kurun**
+
+En az **iki farklı Canvas** oluşturun:
+
+* `HUD Canvas` → Can ve puan bilgileri
+* `Menu Canvas` → Pause ve ayarlar menüsü
+
+Canvas ayarları:
+
+* Render Mode:
+
+  * `Screen Space - Overlay` **veya**
+  * `Screen Space - Camera`
+* UI Scale Mode: `Scale With Screen Size`
+* Reference Resolution: örn. `1920 x 1080`
+
+---
+
+### 2. **HUD (Can ve Puan Sistemi)**
+
+HUD üzerinde en az şu öğeler bulunmalı:
+
+* **Can göstergesi**
+
+  * Slider veya kalp ikonları ile gösterilebilir
+* **Puan göstergesi**
+
+  * Text kullanılarak gösterilmeli
+
+Can ve puan değerleri **script üzerinden güncellenmeli**.
+
+---
+
+### 3. **Anchor ve Layout Kullanımı**
+
+UI öğeleri farklı çözünürlüklerde bozulmamalı:
+
+* Can göstergesi → **Sol üst** (Top-Left anchor)
+* Puan → **Sağ üst** (Top-Right anchor)
+* Pause menüsü → **Orta (Center)**
+
+En az bir yerde:
+
+* `Vertical Layout Group`
+* veya `Horizontal Layout Group`
+  kullanılmalı.
+
+---
+
+### 4. **Pause Menüsü Oluşturun**
+
+Pause sistemi şu şekilde çalışmalı:
+
+* `ESC` tuşuna basıldığında:
+
+  * Oyun durur → `Time.timeScale = 0`
+  * Pause menüsü açılır
+* Devam et (Resume):
+
+  * `Time.timeScale = 1`
+  * Menü kapanır
+
+Pause menüsünde en az şu butonlar olmalı:
+
+* Resume
+* Settings
+* Main Menu (isteğe bağlı)
+
+---
+
+### 5. **Bölüm Tamamlandı Ekranı**
+
+Bir trigger veya görev tamamlandığında:
+
+* Oyun durdurulur
+* “Level Completed” ekranı açılır
+* Oyuncuya:
+
+  * Toplam puan
+  * Devam et / sonraki bölüm butonu
+    gösterilir.
+
+Bu ekran ayrı bir panel veya canvas olarak tasarlanmalı.
+
+---
+
+
+## İpuçları
+
+* UI butonlarında:
+
+  * `OnClick()` event’leri ile fonksiyon çağırın
+
+* Ayarları kaydetmek için (isteğe bağlı):
+
+  * `PlayerPrefs` kullanabilirsiniz
+
+---
+
+## Ekstra (İsteğe bağlı)
+
+* Pause menüsü açılırken yumuşak bir animasyon ekleyin
