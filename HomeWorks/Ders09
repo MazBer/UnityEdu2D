@@ -1,0 +1,135 @@
+# Ders 09 — Unity Audio: SFX, Müzik, Ayarlar ve Audio Mixer
+
+## Amaç
+
+Bu ödevde, Unity’de **temel ses sistemi** kurmayı öğrenecek; **SFX (Sound Effects)** ve **arka plan müziği** ekleyecek, sesleri **Audio Mixer** üzerinden yöneterek **oyun içi ayarlar menüsü** ile kontrol edilebilir hâle getireceksiniz.
+
+---
+
+## Açıklama
+
+Sesler, bir oyunun atmosferini ve oynanış hissini doğrudan etkiler.
+Zıplama sesi, hasar alma efekti veya arka planda çalan müzik; oyuncuya geri bildirim verir ve oyunu “canlı” hissettirir.
+
+Bu derste amacınız:
+
+* Oyun içi efekt ve müzikleri doğru şekilde kullanmak
+* Sesleri kategorilere ayırmak (SFX / Music)
+* Audio Mixer ile ses seviyelerini merkezi olarak yönetmek
+* Oyuncunun ayarlar menüsünden sesi kontrol etmesini sağlamak
+
+---
+
+## Gereksinimler
+
+### 1. **AudioSource ve AudioClip Kullanımı**
+
+Sahnede veya prefab’larda en az iki farklı ses türü kullanın:
+
+* **SFX**
+
+  * Zıplama
+  * Hasar alma
+  * Buton tıklama
+* **Müzik**
+
+  * Arka plan müziği (loop açık olmalı)
+
+Her ses için uygun bir **AudioSource** eklenmeli.
+
+---
+
+### 2. **Audio Listener Kontrolü**
+
+* Sahnenizde **yalnızca bir Audio Listener** bulunmalı
+* Genellikle kamera üzerinde olmalıdır
+
+Birden fazla Audio Listener olmamasına dikkat edin.
+
+---
+
+### 3. **Audio Mixer Oluşturun**
+
+`Assets → Create → Audio Mixer` yoluyla bir mixer oluşturun.
+
+Mixer içinde en az şu gruplar olmalı:
+
+* `Master`
+
+  * `Music`
+  * `SFX`
+
+AudioSource’ların **Output** ayarları uygun gruplara bağlanmalı.
+
+---
+
+### 4. **Ses Seviyesi Ayarları (Önemli)**
+
+Mixer üzerinden:
+
+* Music grubunun ses seviyesi
+* SFX grubunun ses seviyesi
+
+kontrol edilebilir olmalı.
+
+Ayarlar menüsünde:
+
+* **Music Volume Slider**
+* **SFX Volume Slider**
+
+bulunmalı ve bu slider’lar **Audio Mixer parametrelerini** değiştirmeli.
+
+---
+
+### 5. **Script ile Ses Çalma**
+
+En az bir SFX, **kod üzerinden** tetiklenmeli:
+
+* Zıplama
+* Hasar alma
+* Buton tıklama
+
+Sesler `Play()` veya `PlayOneShot()` ile çalınmalı.
+
+---
+
+### 6. **Ses Ayarlarının Kaydedilmesi (Ödev Kısmı)**
+
+Oyuncu ses ayarlarını değiştirdiğinde:
+
+* Music ve SFX ses seviyeleri kaydedilmeli
+* Oyunu kapatıp açınca bu ayarlar geri yüklenmeli
+
+Bunun için:
+
+* `PlayerPrefs`
+  kullanılabilir.
+
+---
+
+## İpuçları
+
+* Müzik için:
+
+  * `Loop` açık olmalı
+  * `Play On Awake` genelde açık olur
+* SFX için:
+
+  * `Play On Awake` kapalı olmalı
+* Audio Mixer’da:
+
+  * Slider değerlerini **Logarithmic (dB)** mantığıyla ayarlayın
+* UI Slider → Audio Mixer bağlantısı:
+
+  * `SetFloat()` kullanılır
+* Aynı sesi üst üste çalmak için:
+
+  * `PlayOneShot()` tercih edin
+
+---
+
+## Ekstra (İsteğe bağlı)
+
+* Pause menüsünde müziği otomatik kısma (ducking)
+* Özel durumlarda (ölüm, boss) müziği değiştirme
+* Sessiz mod (Mute All) toggle ekleme
